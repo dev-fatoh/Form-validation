@@ -1,0 +1,58 @@
+@mixin layoutFlex($dir){
+  display: flex;
+  flex-direction:$dir;
+  juustify-content:center;
+  align-items:center;
+}
+
+
+.app{
+  width:100vw;
+  height:100vh;
+  @include layoutFlex(row);
+
+}
+.form {
+  width:80%;
+  max-width:320px;
+  margin:0 auto;
+  border:0;
+  border-radius:20px;
+  box-shadow:5px 0 30px rgba(0,0,0,0.4);
+  padding:12px;
+  @include layoutFlex(column);
+  gap:20px;
+  .input {
+    width:100%;
+    padding:6px 10px;
+    font-size:18px;
+    border:0;
+
+    border-bottom:1px solid #808090;
+    &:focus {
+      outline:0;
+    }
+    
+
+  }
+  .input[name="message"] {
+    border-bottom:0;
+  }
+  .btn {
+    align-self:flex-end;
+    margin:4px;
+    padding:10px;
+    border:0;
+    border-radius:50%;
+    background-color:#4848E8;
+    @include layoutFlex(row);
+    cursor: pointer;
+    .icon {
+      font-size:22px;
+    }
+
+
+  }
+
+
+}
